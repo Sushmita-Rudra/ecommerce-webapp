@@ -9,16 +9,19 @@ import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: ProductsComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'log-in', component: LogInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'admin/admin-products', component: AdminProductsComponent },
-  { path: 'admin/admin-orders', component: AdminOrdersComponent },
+  { path: 'admin/orders', component: AdminOrdersComponent },
+  { path: 'admin/products/new', component: ProductFormComponent },
+  { path: 'admin/products/:id', component: ProductFormComponent },
+  { path: 'admin/products', component: AdminProductsComponent },
 
   {
     path: '',

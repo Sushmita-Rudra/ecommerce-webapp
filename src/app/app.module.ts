@@ -1,9 +1,14 @@
 import { FirebaseService } from './services/firebase.service';
+import { CategoryService } from './services/category.service';
+import { ProductService } from './services/product.service';
+import { ShoppingCartService } from './services/shopping-cart.service';
 
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -19,6 +24,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -32,17 +40,27 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
     ForgotPasswordComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
+    ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    CustomFormsModule,
+
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule,
   ],
-  providers: [FirebaseService],
+  providers: [
+    FirebaseService,
+    CategoryService,
+    ProductService,
+    ShoppingCartService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
