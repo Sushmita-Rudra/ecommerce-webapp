@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from '../services/shopping-cart.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -13,5 +12,9 @@ export class ShoppingCartComponent implements OnInit {
 
   async ngOnInit() {
     this.cart$ = await this.cartService.getCart();
+  }
+
+  clearCart() {
+    this.cartService.clearCart();
   }
 }

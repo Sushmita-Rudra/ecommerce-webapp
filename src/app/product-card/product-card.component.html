@@ -10,6 +10,7 @@
       {{ product.data.productPrice | currency: "USD":"symbol" }}
     </p>
   </div>
+
   <div class="card-footer">
     <button
       *ngIf="getQuantity() === 0; else updateQuantity"
@@ -25,7 +26,9 @@
             -
           </button>
         </div>
-        <div class="col text-center pt-2">{{ getQuantity() }} in cart</div>
+        <div class="col text-center pt-2">
+          {{ getQuantity() }}
+        </div>
         <div class="col-2">
           <button (click)="addToCart()" class="btn btn-info btn-block">
             +

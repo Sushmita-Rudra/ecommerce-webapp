@@ -9,6 +9,17 @@ export class ShoppingCart {
     }
   }
 
+  // if(!this.shoppingCart || !this.shoppingCart.payload.toJSON().items || null === this.shoppingCart.key) return 0;
+
+  getQuantity(product) {
+    if (this.itemsMap[product.key] == undefined) {
+      return 0;
+    }
+    let item = this.itemsMap[product.key];
+
+    return item ? item.quantity : 0;
+  }
+
   get totalPrice() {
     let sum = 0;
     for (let productId in this.items) {
