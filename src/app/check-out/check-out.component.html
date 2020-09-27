@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2>Shipping Address</h2>
+  <div class="row" *ngIf="cart$ | async as cart">
+    <div class="col-4">
+      <app-shipping-form [cart]="cart"></app-shipping-form>
+    </div>
+    <div class="mt-5 ml-5 pl-5 col-5">
+      <app-shopping-cart-summary [cart]="cart"></app-shopping-cart-summary>
+    </div>
+  </div>
+</div>

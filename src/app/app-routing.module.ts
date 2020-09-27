@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 const routes: Routes = [
   { path: 'home', component: ProductsComponent },
@@ -18,6 +21,10 @@ const routes: Routes = [
   { path: 'log-in', component: LogInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'check-out', component: CheckOutComponent },
+  { path: 'order-success/:id', component: OrderSuccessComponent },
+  { path: 'my-orders', component: MyOrdersComponent },
+
   { path: 'admin/orders', component: AdminOrdersComponent },
   { path: 'admin/products/new', component: ProductFormComponent },
   { path: 'admin/products/:id', component: ProductFormComponent },

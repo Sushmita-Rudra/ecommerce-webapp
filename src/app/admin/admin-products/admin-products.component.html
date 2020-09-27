@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container m-4">
   <a [routerLink]="['/admin/products/new']" class="btn btn-primary center"
     >Add New Product</a
@@ -14,36 +15,6 @@
   />
 </div>
 <div class="container">
-  <!-- <data-table
-    [items]="items"
-    [itemCount]="itemCount"
-    (reload)="reloadItems($event)"
-  >
-    <data-table-column
-      [property]="'productTitle'"
-      [header]="'Title'"
-      [sortable]="true"
-      [resizable]="true"
-    >
-    </data-table-column>
-    <data-table-column
-      [property]="'productPrice'"
-      [header]="'Price'"
-      [sortable]="true"
-      [resizable]="true"
-    >
-      <ng-template #dataTableCell let-item="product">
-        {{ product.productPrice | currency: "USD":true }}
-      </ng-template>
-    </data-table-column>
-    <data-table-column [property]="'key'">
-      <ng-template>
-        <a [routerLink]="['/admin/products/', product.key]">Edit</a>
-      </ng-template>
-    </data-table-column>
-  </data-table>
-  -->
-
   <table class="table">
     <thead>
       <tr>

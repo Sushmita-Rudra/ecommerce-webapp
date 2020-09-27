@@ -2,6 +2,7 @@ import { FirebaseService } from './services/firebase.service';
 import { CategoryService } from './services/category.service';
 import { ProductService } from './services/product.service';
 import { ShoppingCartService } from './services/shopping-cart.service';
+import { OrderService } from './services/order.service';
 
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,6 +29,11 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
+import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +51,11 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     ProductFilterComponent,
     ProductCardComponent,
     ProductQuantityComponent,
+    CheckOutComponent,
+    ShippingFormComponent,
+    OrderSuccessComponent,
+    ShoppingCartSummaryComponent,
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +73,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     CategoryService,
     ProductService,
     ShoppingCartService,
+    OrderService,
   ],
   bootstrap: [AppComponent],
 })
